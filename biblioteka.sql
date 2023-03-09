@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 07 Mar 2023, 15:12
+-- Czas generowania: 09 Mar 2023, 13:55
 -- Wersja serwera: 10.4.11-MariaDB
 -- Wersja PHP: 7.2.31
 
@@ -58,27 +58,29 @@ INSERT INTO `autorzy` (`id`, `imie`, `nazwisko`) VALUES
 CREATE TABLE `czytelnicy` (
   `id` int(11) NOT NULL,
   `imie` varchar(30) NOT NULL,
-  `nazwisko` varchar(50) NOT NULL,
-  `kod` varchar(6) NOT NULL
+  `nazwisko` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Zrzut danych tabeli `czytelnicy`
 --
 
-INSERT INTO `czytelnicy` (`id`, `imie`, `nazwisko`, `kod`) VALUES
-(1, 'Janina', 'Michalak', ''),
-(2, 'Adam', 'Milek', ''),
-(3, 'Bogdan', 'Nowacki', ''),
-(4, 'Krzysztof', 'Kowalski', ''),
-(5, 'Jadwiga', 'Kowal', ''),
-(6, 'Magdalena', 'Mucha', ''),
-(7, 'Maciej', 'Wysocki', ''),
-(8, 'zbigniew', 'Lasecki', ''),
-(9, 'Aleksandra', 'Kucharczyk', ''),
-(10, 'Olga', 'Domys', ''),
-(11, 'Anna', 'Michalak', 'an05mi'),
-(14, 'maciek', 'plonka', 'mapl91');
+INSERT INTO `czytelnicy` (`id`, `imie`, `nazwisko`) VALUES
+(1, 'Janina', 'Michalak'),
+(2, 'Adam', 'Milek'),
+(3, 'Bogdan', 'Nowacki'),
+(4, 'Krzysztof', 'Kowalski'),
+(5, 'Jadwiga', 'Kowal'),
+(6, 'Magdalena', 'Mucha'),
+(7, 'Maciej', 'Wysocki'),
+(8, 'zbigniew', 'Lasecki'),
+(9, 'Aleksandra', 'Kucharczyk'),
+(10, 'Olga', 'Domys'),
+(11, 'Anna', 'Michalak'),
+(14, 'Maciek', 'Plonka'),
+(17, 'Jan', 'Kowalski'),
+(18, 'test', 'testowy'),
+(19, 'test1', 'test1');
 
 -- --------------------------------------------------------
 
@@ -119,6 +121,7 @@ CREATE TABLE `ksiazki` (
 --
 
 INSERT INTO `ksiazki` (`id`, `id_kategoria`, `tytul`, `id_autor`, `id_wydawnictwo`) VALUES
+(1, 3, 'Ksiega ubogich', 1, 2),
 (7, 3, 'Dies irae', 1, 3),
 (8, 3, 'Poezje', 1, 1),
 (9, 3, 'Wiersze wybrane', 2, 2),
@@ -181,14 +184,14 @@ CREATE TABLE `wypozyczenia` (
 --
 
 INSERT INTO `wypozyczenia` (`id`, `id_czytelnik`, `id_ksiazka`, `data_wypozyczenia`, `data_oddania`) VALUES
-(1, 2, 22, '2018-01-01', '2018-01-12'),
+(1, 2, 23, '2018-01-01', '2018-01-12'),
 (2, 3, 12, '2017-10-01', '2017-10-26'),
-(3, 1, 30, '2018-01-07', '2018-01-21'),
-(4, 3, 15, '2017-12-03', '2017-12-11'),
+(3, 1, 31, '2018-01-07', '2018-01-21'),
+(4, 3, 13, '2017-12-03', '2017-12-11'),
 (5, 2, 25, '2017-11-06', '2017-11-23'),
-(6, 5, 28, '2018-01-02', '2018-01-10'),
-(7, 6, 29, '2017-12-13', '2018-01-09'),
-(8, 9, 21, '2017-11-19', '2017-12-12'),
+(6, 5, 35, '2018-01-02', '2018-01-10'),
+(7, 6, 32, '2017-12-13', '2018-01-09'),
+(8, 9, 1, '2017-11-19', '2017-12-12'),
 (9, 2, 10, '2018-01-05', '2018-01-19'),
 (10, 3, 17, '2017-11-13', '2017-12-03');
 
@@ -246,13 +249,13 @@ ALTER TABLE `autorzy`
 -- AUTO_INCREMENT dla tabeli `czytelnicy`
 --
 ALTER TABLE `czytelnicy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT dla tabeli `ksiazki`
 --
 ALTER TABLE `ksiazki`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT dla tabeli `wydawnictwa`
