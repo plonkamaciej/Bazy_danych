@@ -14,7 +14,9 @@ Dostepne funkcje:
    3. 'Dodaj ksiazke',
    4. 'Dodaj czytelnika',    
    5. 'Wyswietl wszystkie ksiazki',
-   6. 'Wypozycz ksiazke',
+   6. 'Wyswietl czytelnikow',
+   7. 'Wypozycz ksiazke',
+   
    0. 'Exit',
   
    * Szukaj książek - "SELECT `ksiazki.tytul`, `autorzy.imie`, `autorzy.nazwisko` FROM `ksiazki` INNER JOIN `autorzy` ON `ksiazki.id_autor` = `autorzy.id` WHERE `autorzy.nazwisko` = [nazwisko]" - wyszukiwanie ksiazek po nazwisku autora
@@ -22,5 +24,6 @@ Dostepne funkcje:
    * Dodaj książkę - "INSERT INTO `ksiazki` (`id`, `id_kategoria`, `tytul`, `id_autor`, `id_wydawnictwo`)" - dodanie książki do listy ksiażek w wypożyczalni
    * Dodaj czytelnika - INSERT INTO 'czytelnicy' (`id`, `imie`, `nazwisko`)) - dodaj osobe do listy czytelnikow
    * Wyswietl wszystkie ksiazki - "SELECT * FROM `ksiazki` ORDER BY `id` ASC"
+   * Wyswietl czytelnikow' - "SELECT * FROM `czytelnicy`"
    * Wypożycz książkę - "INSERT INTO 'czytelnicy' (`id`, `id_czytelnik`, `id_ksiazka`, `data_wypozyczenia`, `data_oddania`))
    * Exit - zakoncz program, wyjdź z bazy danych
