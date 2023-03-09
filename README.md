@@ -9,13 +9,13 @@ Uzyta baza danych:
 
 Dostepne funkcje:
 
-   1: 'Szukaj ksiazek',
-   2: 'Wyswietl historie',
-   3: 'Dodaj ksiazke',
-   4: 'Dodaj czytelnika',    
-   5: 'Wyswietl wszystkie ksiazki',
-   6: 'Wypozycz ksiazke',
-   0: 'Exit',
+   1. 'Szukaj ksiazek',
+   2. 'Wyswietl historie',
+   3. 'Dodaj ksiazke',
+   4. 'Dodaj czytelnika',    
+   5. 'Wyswietl wszystkie ksiazki',
+   6. 'Wypozycz ksiazke',
+   0. 'Exit',
   
    * Szukaj książek - "SELECT `ksiazki.tytul`, `autorzy.imie`, `autorzy.nazwisko` FROM `ksiazki` INNER JOIN `autorzy` ON `ksiazki.id_autor` = `autorzy.id` WHERE `autorzy.nazwisko` = [nazwisko]" - wyszukiwanie ksiazek po nazwisku autora
    * Wyswietl historie - "SELECT `wypozyczenia.id`, `czytelnicy.imie`, `czytelnicy.nazwisko`, `ksiazki.tytul`, `data_wypozyczenia`, `data_oddania` FROM ((`wypozyczenia` LEFT JOIN `czytelnicy` ON `wypozyczenia.id_czytelnik` = `czytelnicy.id`) LEFT JOIN `ksiazki` ON `wypozyczenia.id_ksiazka` = `ksiazki.id`)" - wyswietlamy historie wypozycznia książek
