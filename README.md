@@ -23,3 +23,4 @@ Dostepne funkcje:
    * Dodaj czytelnika - INSERT INTO 'czytelnicy' (`id`, `imie`, `nazwisko`)) - dodaj osobe do listy czytelnikow
    * Wyswietl wszystkie ksiazki - "SELECT * FROM `ksiazki` ORDER BY `id` ASC"
    * Wypożycz książkę - "INSERT INTO 'czytelnicy' (`id`, `id_czytelnik`, `id_ksiazka`, `data_wypozyczenia`, `data_oddania`))
+   * Exit - zakoncz program, wyjdź z bazy danych
