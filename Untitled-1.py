@@ -13,6 +13,7 @@ menu_options = {
     3: 'Dodaj ksiazke',
     4: 'Dodaj czytelnika',
     5: 'Wyswietl wszystkie ksiazki',
+    6: 'Wypozycz ksiazke',
     0: 'Exit',
 }
 
@@ -55,7 +56,12 @@ def option3():
 def option4():
     print('Handle option \'Option 5\'')
     mycursor = mydb.cursor()
-    mycursor.execute("INSERT INTO `ksiazki` (`id`, `id_kategoria`, `tytul`, `id_autor`, `id_wydawnictwo`) VALUES (NULL, '2', '2', '2', '2')")
+    imie = input("Podaj imie czytelnika: ")
+    nazwisko = input("Podaj nazwisko czytelnika: ")
+    sql = "INSERT INTO 'czytelnicy' ('id', 'imie', 'nazwisko')) VALUES (%s, %s, %s)"
+    val = ('NULL', imie, nazwisko)
+    mycursor.execute(sql, val)
+    mydb.commit()
    
 
 
@@ -67,6 +73,17 @@ def option5():
     for x in myresult:
      print(x)
 
+def option6():
+    print('/handle option \'Option 4\'')
+    mycursor = mydb.cursor()
+    id_czytelnik = input("Podaj id czytelnika: ")
+    id_ksiazka = input("Podaj id ksiazki")
+    data_wyp = input("Podaj nazwisko czytelnika: ")
+    data_odd = input("podaj date oddania")
+    sql = "INSERT INTO 'czytelnicy' ('id', 'id_czytelnik', 'id_ksiazka', 'data_wypozyczenia', 'data_oddania')) VALUES (%s, %s, %s, %s, %s)"
+    val = ('NULL', id_czytelnik, id_ksiazka, data_wyp, data_odd)
+    mycursor.execute(sql, val)
+    mydb.commit()
 
 if __name__=='__main__':
     while(True):
@@ -87,12 +104,14 @@ if __name__=='__main__':
             option4()
         elif option == 5:
           option5()
+        elif option == 6:
+          option6()
         elif option == 0:
             print('Goodbye')
             mydb.close()
             exit()
                 
         else:
-            print('Invalid option. Please enter a number between 1 and 4.')
+            print('Invalid option. Please enter a number between 1 and 5.')
 
 
