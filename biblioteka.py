@@ -54,7 +54,7 @@ def option3():
 
   
 def option4():
-    print('Handle option \'Option 5\'')
+    print('Handle option \'Option 4\'')
     mycursor = mydb.cursor()
     imie = input("Podaj imie czytelnika: ")
     nazwisko = input("Podaj nazwisko czytelnika: ")
@@ -66,15 +66,17 @@ def option4():
 
 
 def option5():
-    print('Handle option \'Option 4\'')
+    print('Handle option \'Option 5\'')
     mycursor = mydb.cursor()
     mycursor.execute("SELECT * FROM `ksiazki` ORDER BY `id` ASC")
     myresult = mycursor.fetchall()
     for x in myresult:
      print(x)
 
+#TODO zamienic id czytelnika na dodawanie przez imie i nazwisko || automatycznie wypełnianie daty    
+
 def option6():
-    print('/handle option \'Option 4\'')
+    print('/handle option \'Option 6\'')
     mycursor = mydb.cursor()
     id_czytelnik = input("Podaj id czytelnika: ")
     id_ksiazka = input("Podaj id ksiazki")
